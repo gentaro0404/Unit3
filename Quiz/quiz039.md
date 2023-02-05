@@ -41,4 +41,4 @@ Screen:
 
 
 # Solution overview
-[]!
+![](quiz039.2.png)
