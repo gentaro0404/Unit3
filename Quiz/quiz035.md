@@ -68,5 +68,5 @@ def test_value_errors():
         bk.set_holder_name(name=100)
 ```
 ## Solution overview
-[]!
+![](quiz035.png)
 
