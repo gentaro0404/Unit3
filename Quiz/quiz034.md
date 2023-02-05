@@ -65,4 +65,4 @@ def test_to_roman_exceptions():
   ```
   
 ## Solution overview
-[]!
+![](quiz034.png)
