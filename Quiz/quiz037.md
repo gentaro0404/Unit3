@@ -1,71 +1,71 @@
  # Development
 ## Code
 ```.py
-import random
-class Account:
+class CompoundInterest:
+    def __init__(self,principal:int, rate:float, year:int):
+        self.principal = principal
+        self.rate = rate
+        self.year = year
+
+
+class AccountingProgram:
     def __init__(self):
-        self.balance = 0
-        self.holder_name = ""
-        self.holder_email = ""
-        number1 = random.randint(100,999)
-        number2 = random.randint(10000,99999)
-        number3 = random.randint(0,9)
-        self.number = [number1,number2,number3]
+        self.compound = CompoundInterest(0,0,0)
+    def set_principal(self,principal):
+        if principal <= 0:
+            raise ValueError("Principal should be greater than zero")
+        self.compound.principal = principal
+        return f"Principal set to {self.compound.principal}"
 
-    def get_account_no(self):
-        return f"{self.number[0]}-{self.number[1]}-{self.number[2]}"
+    def set_rate(self,rate):
+        if rate <= 0:
+            raise ValueError("Interest rate should be greater than zero")
+        self.compound.rate = rate
+        return f"Rate set to {self.compound.rate}"
 
-    def set_holder_name(self,name):
-        if not isinstance(name, str):
-            raise ValueError("Name must be a string")
-        self.holder_name = name
-        temp = f"Holder's name set to {self.holder_name}"
-        return temp
+    def set_years(self, year):
+        if year <= 0:
+            raise ValueError("Years should be greater than zero")
+        self.compound.year = year
+        return f"Year set to {self.compound.year}"
 
-    def set_holder_email(self,email):
-        self.holder_email = email
-        temp = f"Holder's email set to {self.holder_email}"
-        return temp
-
-    def get_balance(self):
-        return self.balance
-
-    def deposit(self,amount:int):
-        self.balance += amount
-        temp = f"New balance: {self.balance} USD"
-        return temp
+    def calculate_interest(self):
+        temp = self.compound.principal*(1+self.compound.rate)**self.compound.year
+        format_float = "{:.2f}".format(temp)
+        return float(format_float)
 
 ```
 
 ## test code
 ```
 import pytest
-from quiz035 import Account
+from quiz037 import AccountingProgram
 
-def test_empty_account():
-    bk = Account()
-    assert bk.balance == 0
-    assert bk.holder_name == ""
-    assert bk.holder_email == ""
-    assert isinstance(bk.number, list)
-    number = bk.get_account_no().split("-")
-    assert  len(number)==3 and len(number[0])==3 and len(number[1])==5 and len(number[2])==1
+def test_calculate_interest():
+    program = AccountingProgram()
+    program.set_principal(1000)
+    program.set_rate(0.05)
+    program.set_years(10)
+    interest = program.calculate_interest()
+    assert interest == 1628.89
 
-def test_create_account():
-    bk = Account()
-    assert bk.get_balance() == 0
-    assert bk.set_holder_name(name="Bob") == "Holder's name set to Bob"
-    assert bk.set_holder_email(email="bob@company.xyz") == "Holder's email set to bob@company.xyz"
-    assert bk.deposit(amount=100) == "New balance: 100 USD"
-    assert bk.get_balance() == 100
+def test_principal_validation():
+    program = AccountingProgram()
+    with pytest.raises(ValueError) as err:
+        program.set_principal(-1000)
+    assert "Principal should be greater than zero" in str(err.value)
 
+def test_rate_validation():
+    program = AccountingProgram()
+    with pytest.raises(ValueError) as err:
+        program.set_rate(-0.05)
+    assert "Interest rate should be greater than zero" in str(err.value)
 
-def test_value_errors():
-    bk = Account()
-    with pytest.raises(ValueError):
-        bk.set_holder_email(email="bob@bob@bob")
-        bk.set_holder_name(name=["Bob"])
-        bk.set_holder_name(name=100)
+def test_years_validation():
+    program = AccountingProgram()
+    with pytest.raises(ValueError) as err:
+        program.set_years(-10)
+    assert "Years should be greater than zero" in str(err.value)
 ```
 ## Solution overview
 []!
