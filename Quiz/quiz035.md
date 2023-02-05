@@ -37,5 +37,5 @@ class Account:
 ```
 
 # test pass
-<img width="790" alt="Screen Shot 2023-01-26 at 9 13 06 PM" src="https://user-images.githubusercontent.com/100017195/214832800-ea609f6a-f000-4f24-8334-695d85dca0d3.png">
+[]!
 
