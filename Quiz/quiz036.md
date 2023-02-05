@@ -87,4 +87,4 @@ def test_classroom():
 
 
  # Solution overview
-[]!
+![](quiz036.png)
