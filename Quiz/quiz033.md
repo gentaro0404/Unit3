@@ -1,4 +1,5 @@
- # code
+# Development
+## code
 ```.py
 # Wrire the function mystery and pass the tests contained in the file test_quiz_33.py
 
@@ -15,7 +16,7 @@ def mystery(list1, list2:list):
 #print(mystery([1, 2, 3], [3, 4, 5]))
 
 ```
-# test code
+## test code
 ```.py
 import pytest
 from quiz33 import mystery
@@ -30,5 +31,5 @@ def test_multiple_common_elements():
   assert mystery([1, 2, 3, 4], [3, 4, 5, 6]) == [3, 4]
   ```
   
-# test pass
+# Solution overview
 []!
