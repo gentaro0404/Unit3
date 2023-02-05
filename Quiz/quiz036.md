@@ -1,5 +1,5 @@
- ## Development
- # code
+ # Development
+ ## code
 ```.py
 import pytest
 class Person:
@@ -86,5 +86,5 @@ def test_classroom():
         classroom.get_average_score()
 
 
-# Solution overview
+ # Solution overview
 []!
