@@ -32,4 +32,4 @@ def test_multiple_common_elements():
   ```
   
 # Solution overview
-[]!
+![](quiz033.png)
