@@ -1,40 +1,34 @@
  # code
 ```.py
-import random
-class Account:
-    def __init__(self):
-        self.balance = 0
-        self.holder_name = ""
-        self.holder_email = ""
-        number1 = random.randint(100,999)
-        number2 = random.randint(10000,99999)
-        number3 = random.randint(0,9)
-        self.number = [number1,number2,number3]
+# Wrire the function mystery and pass the tests contained in the file test_quiz_33.py
 
-    def get_account_no(self):
-        return f"{self.number[0]}-{self.number[1]}-{self.number[2]}"
+# the function takes two lists,list1 and list2, as input ans creates an empty list
 
-    def set_holder_name(self,name):
-        if not isinstance(name, str):
-            raise ValueError("Name must be a string")
-        self.holder_name = name
-        temp = f"Holder's name set to {self.holder_name}"
-        return temp
+def mystery(list1, list2:list):
+    output = []
+    for i in range(len(list1)):
+        for j in range(len(list2)):
+            if list1[i] == list2[j]:
+                output.append(list1[i])
+    return output
 
-    def set_holder_email(self,email):
-        self.holder_email = email
-        temp = f"Holder's email set to {self.holder_email}"
-        return temp
-
-    def get_balance(self):
-        return self.balance
-
-    def deposit(self,amount:int):
-        self.balance += amount
-        temp = f"New balance: {self.balance} USD"
-        return temp
+#print(mystery([1, 2, 3], [3, 4, 5]))
 
 ```
+# test code
+```.py
+import pytest
+from quiz33 import mystery
 
+def test_empty_lists():
+  assert mystery([], []) == []
+
+def test_one_common_element():
+  assert mystery([1, 2, 3], [3, 4, 5]) == [3]
+
+def test_multiple_common_elements():
+  assert mystery([1, 2, 3, 4], [3, 4, 5, 6]) == [3, 4]
+  ```
+  
 # test pass
 []!
