@@ -85,6 +85,6 @@ def test_classroom():
         classroom.remove_student(student2)
         classroom.get_average_score()
 
-
- # Solution overview
+```
+## Solution overview
 ![](quiz036.png)
