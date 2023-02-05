@@ -66,4 +66,5 @@ plt.show()
 
 
 # Solution overview
-[]!
+![](quiz038.png)
+![](quiz038.2.png)
