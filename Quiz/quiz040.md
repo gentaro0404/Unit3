@@ -48,4 +48,5 @@ MDScreen:
 
 
 # Solution overview
-[]!
+![](quiz040.1.png)
+![](quiz040.2.png)
