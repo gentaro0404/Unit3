@@ -4,11 +4,17 @@
 
 ## Problem definition(Client identification)
 
-Alessandro is a student studying Japanese ab initio in UWC ISAK Japan. He is finding it hard to revise the vocabulary for the weekly vocabulary test as most of the voabulary in the book is very spread out and hard to find. Not to mention vocabs in the textbook don't usuallu come with English meanings, which increases the hassle. As he wants a systematic way of revising for the vocabulary tests, he wants an application on his computer to assist him when he revises Japanese vocabulary while also keeping track of his progress. In addition, as the application may be used by multiple people but Alessandro wants to keep the progress tracking specific to the person, so the application requires a login system as well.
-
+My client, Daiichiro, is a student of ISAK. He loves music very much and often listens to music subscription services. And one of the features in the subscription service is that you can register your favorite songs. However, although the favorite songs feature allows you to make a list of your favorite songs, it is difficult to create playlists by genre or by mood you want to listen to. For this reason, we need an application that allows us to create new lists of our favorite songs and listen to them by category. Compared to the analog method of writing in a notebook, the digital method is more efficient because the necessary data is saved each time, and the risk of loss is reduced. Also, with analog, it is easy to write down data, but very labor intensive to correct it. Also, sorting through a list of favorite songs is time-consuming. In contrast, digital data can be added, deleted, and rearranged in a snap. The application also allows you to enter information such as when the song was added, the author, the year it was released, and a link to the song's subscription application.
+and log it!
 ## Proposed Solution
 
-Considering the client's requirements, an adequate solution would include a localized computer program with a GUI(Graphical User Interface) that can store data into a database. Python would be an adequate programming language for the solution as it is open source, it is mature and supported in mutiple platforms (platform-independent) including macOS, Windows, Linux.[^1]
+After analyzing the client's needs and taking into account the specific requirements they have outlined, it is clear that a software solution that allows for the easy and efficient storage of data into a database via a user-friendly GUI(Graphical User Interface) is the best approach. The localized program would need to be designed to meet the client's specific language requirements, and the interface would need to be intuitive and easy to navigate.
+
+In terms of selecting the appropriate programming language for the development of such a solution, Python stands out as an ideal choice. Not only is it an open-source language, which means it is free to use, but it is also a mature language that has been in use for many years. Additionally, Python is supported on multiple platforms, making it a platform-independent solution that can run on macOS, Windows, Linux, and more.
+
+Furthermore, Python offers a wide range of libraries and frameworks that can simplify the development process, such as PyQt, which is a popular library for building GUI applications in Python. This would make it easier for the development team to create a user-friendly interface that meets the client's needs while also ensuring that the software is efficient and effective.
+
+Overall, a localized computer program with a GUI that can store data into a database, built using Python, is the most appropriate solution for the client's requirements. With its many benefits and features, Python provides a solid foundation for developing a solution that is both effective and user-friendly.
 
 **Design statement**  
 
