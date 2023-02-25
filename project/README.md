@@ -8,13 +8,20 @@ My client, Daiichiro, is a student of ISAK. He loves music very much and often l
 and log it!
 ## Proposed Solution
 
-After analyzing the client's needs and taking into account the specific requirements they have outlined, it is clear that a software solution that allows for the easy and efficient storage of data into a database via a user-friendly GUI(Graphical User Interface) is the best approach. The localized program would need to be designed to meet the client's specific language requirements, and the interface would need to be intuitive and easy to navigate.
+### Design Statement
 
-In terms of selecting the appropriate programming language for the development of such a solution, Python stands out as an ideal choice. Not only is it an open-source language, which means it is free to use, but it is also a mature language that has been in use for many years. Additionally, Python is supported on multiple platforms, making it a platform-independent solution that can run on macOS, Windows, Linux, and more.
+To meet the needs of my client, Daiichiro, I propose to create an application that will allow him to manage and organize his favorite songs. The application would allow him to create customized playlists based on his genre and mood, and to enter information such as the date the song was added, its author, year of release, and links to subscription services. The proposed solution is designed using Python as the primary programming language, KivyMD for the graphical user interface (GUI), and SQLAlchemy for database management.
 
-Furthermore, Python offers a wide range of libraries and frameworks that can simplify the development process, such as PyQt, which is a popular library for building GUI applications in Python. This would make it easier for the development team to create a user-friendly interface that meets the client's needs while also ensuring that the software is efficient and effective.
+### System Overview
 
-Overall, a localized computer program with a GUI that can store data into a database, built using Python, is the most appropriate solution for the client's requirements. With its many benefits and features, Python provides a solid foundation for developing a solution that is both effective and user-friendly.
+The application will be developed in PyCharm version 2022.3.2 (Professional Edition) and will use the macOS Ventura version 13.0.1 operating system on a 2021 MacBook Air M1. It will use Python as the primary programming language and will employ KivyMD to create a user-friendly graphical interface. SQLAlchemy will be used to manipulate and manage the application's database.
+
+### Software Justification
+
+Python
+
+Python will be used as the primary programming language for several reasons. Firstly, Python is a high-level, interpreted programming language with a simple syntax that is easy to understand, making it an excellent choice for beginners. Additionally, Python is one of the fastest-growing programming languages, with a vast online community and a plethora of resources available to aid in its development<sup>[[1]](https://www.datacamp.com/blog/top-programming-languages-for-data-scientists-in-2022)</sup>. Secondly, Python is a language that I am most comfortable coding in, and its object-oriented programming framework is modular and flexible, making it ideal for this project<sup>[[2]](https://www.educba.com/advantages-of-oop/)</sup>.
+
 
 **Design statement**  
 
