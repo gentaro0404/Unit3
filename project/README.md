@@ -43,8 +43,9 @@ In conclusion, the proposed solution will address Daiichiro's need for a music m
 
 ## Success Criteria
 
-1. 
-2. 
+1. The application will have login,logout and register system.
+2. The application will  
+3. 
 
 # Criteria B: Design
 
