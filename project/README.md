@@ -45,10 +45,10 @@ In conclusion, the proposed solution will address Daiichiro's need for a music m
 
 1. The application will have login,logout and register system.
 2. The application allows the user to enter all attributes (song title, release date, artist name, album name, genre,song link), which are stored in a database through an interface.
-3. The application allows users to search and find songs by all attributes (song title, release date, artist name, album name, genre,song link).
-4.The login information, such as the username, email and password, will be secured and the password will be encrypted through a hash.
-5.The registration page will allow additional users to gain access to use the application.
-6.The application is a GUI and displays a login page, registration page, home page, search page, additional logs, and a list of songs.
+3.  The application allows users to search and find songs by all attributes (song title, release date, artist name, album name, genre,song link).
+4.  The login information, such as the username, email and password, will be secured and the password will be encrypted through a hash.
+5.  The registration page will allow additional users to gain access to use the application.
+6.  The application is a GUI and displays a login page, registration page, home page, search page, additional logs, and a list of songs.
 # Criteria B: Design
 
 ## System Diagram
