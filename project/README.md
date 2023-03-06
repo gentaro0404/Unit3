@@ -69,9 +69,12 @@ In conclusion, the proposed solution will address Daiichiro's need for a music m
 
 | Task No | Planned Action                                   | Planned Outcome                                          | Time estimate | Target completion date | Criterion |
 | ------- | ------------------------------------------------ | -------------------------------------------------------- | ------------- | ---------------------- | --------- |
-| 1       | Planning: First Meeting with client              | Start collecting the context of the problem              | 6min          | Feb 7                  | A         |
-| 2       | Planning: Defining problem and proposed solution | Start on refining client's requirements and tools needed | 2hr           | Feb 15                 | A         |
-| 3       | Coding: Initializing codebase                    | To have the base environment of program ready for coding | 1hr           | Feb 20                 | C         |
+| 1       | First Meeting with client               | Start collecting the context of the problem              | 6min          | Feb 7                  | A         |
+| 2       |  Defining problem and proposed solution | Start on refining client's requirements and tools needed | 2hr           | Feb 13                 | A         |
+| 3      | Initializing codebase                    | To have the base environment of program ready for coding | 1hr           | Feb 14                | C         |
+|     | Create login page                        | Program the kivymd and python files for the GUI and functionaliy of the login page.    | 1hr  | feb 14. | B |
+|    | Create regisration page.                    | Program the kivymd and python files for the GUI and functionality of the registration page	| 1hr | feb 14 |  B |
+|    |  Create wireframe diagram                  | Design the wireframe diagram of the application     | 1hr30mis.     |  Feb 15 |  C  |
 
 ## Flow Diagrams
 
