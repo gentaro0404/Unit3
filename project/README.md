@@ -75,7 +75,9 @@ In conclusion, the proposed solution will address Daiichiro's need for a music m
 |     | Create login page                        | Program the kivymd and python files for the GUI and functionaliy of the login page.    | 1hr  | feb 14. | B |
 |    | Create regisration page.                    | Program the kivymd and python files for the GUI and functionality of the registration page	| 1hr | feb 14 |  B |
 |    |  Create wireframe diagram                  | Design the wireframe diagram of the application     | 1hr30mis.     |  Feb 15 |  C  |
-
+|    | Crate system diagram                       | Design the system diagram of the application |  1hr. | Feb 17. | A |
+|    | Create ER table and diagram                | Design the ER table and diagram for the application.  |  1hr30mis  | Feb 19  |  A |  
+|    | 
 ## Flow Diagrams
 
 ### MVP Program
@@ -136,7 +138,29 @@ achievable.
 
 ## Criteria D: Functionality
 
+### DEvelopment of User interface Using KivyMD
 
+### Screen Manager
+```py
+ScreenManager:
+    LoginScreen:
+        name: "LoginScreen"
+    SignupScreen:
+        name: "SignupScreen"
+    HomeScreen:
+        name :"HomeScreen"
+    SearchScreen:
+        name :"SearchScreen"
+    AddScreen:
+        name :"AddScreen"
+    TableScreen:
+        name :"TableScreen"
+```
+My client has created a list of his favorite songs and his goal is to be able to listen to those songs through a URL from that list. Therefore, in developing the user interface, GIU is the best fit for this need because it is easy and intuitive to use.
+
+Kivycode above created the "LoginScreen,SignupScreen,HomeScreen,SearchScreen,AddScreen,TableScreen" screens for these applications. In addition, unique names and IDs were defined in the Screen Manager.
+
+Each screen uses and defines a separate kivy code block that provides the layout and widgets for that screen. As an example, the "SearchScreen" contains a text input field from which you can search for each item. Also, in the "TableScreen," songs added by the user are displayed for each item. Then, by tapping the URL displayed there, the user can jump to that URL and listen to the song.
 
 ## Demonstration Video
 
