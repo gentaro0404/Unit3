@@ -164,6 +164,26 @@ Each screen uses and defines a separate kivy code block that provides the layout
 
 Defining each screen as a separate widget is possible with ScreenManager. And because it is possible to switch screens on the liverpool and treat each screen as a separate one. As an example, when a user logs in, he/she can switch from "LoginScreen" to "HomeScreen" by pressing a button. This structure of the GUI results in a very organized and intuitive interface that is easy to use for both users and developers.
 
+### General Application Screen for Kivy
+
+```.py
+<SignupScreen>:
+     size: 500,500
+        FitImage:
+            source:"main_image.jpeg"
+        MDCard:
+            size_hint: .8, .9
+            elevation: 2
+            orientation: "vertical"
+            pos_hint: {"center_x": .5, "center_y":.5}
+            padding: dp(50)      
+        
+ ```
+ 
+ One of this kivy code block. This code is the one that lays out the SingupScreen screen as appropriate. The MDcard is a component of the KivyMD library and represents a rectangular card with rounded corners, into which other widgets can be placed. The MDcard depicts the percentage of the MDcard that will be tightened on the screen, and also depicts this MDcard perpendicular to the screen. Also, the spacing of this MDcaed relative to the Screen, and what percentage of the middle of the screen this MDcard will be positioned in. This information is then entered and depicted as a visual layout. This kivy code block was employed as the basic setup for each screen.
+
+
+
 
 
 ## Demonstration Video
