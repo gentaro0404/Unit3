@@ -162,6 +162,10 @@ Kivycode above created the "LoginScreen,SignupScreen,HomeScreen,SearchScreen,Add
 
 Each screen uses and defines a separate kivy code block that provides the layout and widgets for that screen. As an example, the "SearchScreen" contains a text input field from which you can search for each item. Also, in the "TableScreen," songs added by the user are displayed for each item. Then, by tapping the URL displayed there, the user can jump to that URL and listen to the song.
 
+Defining each screen as a separate widget is possible with ScreenManager. And because it is possible to switch screens on the liverpool and treat each screen as a separate one. As an example, when a user logs in, he/she can switch from "LoginScreen" to "HomeScreen" by pressing a button. This structure of the GUI results in a very organized and intuitive interface that is easy to use for both users and developers.
+
+
+
 ## Demonstration Video
 
 *To be done
