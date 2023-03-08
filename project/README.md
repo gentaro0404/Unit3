@@ -180,8 +180,17 @@ Defining each screen as a separate widget is possible with ScreenManager. And be
         
  ```
  
- One of this kivy code block. This code is the one that lays out the SingupScreen screen as appropriate. The MDcard is a component of the KivyMD library and represents a rectangular card with rounded corners, into which other widgets can be placed. The MDcard depicts the percentage of the MDcard that will be tightened on the screen, and also depicts this MDcard perpendicular to the screen. Also, the spacing of this MDcaed relative to the Screen, and what percentage of the middle of the screen this MDcard will be positioned in. This information is then entered and depicted as a visual layout. This kivy code block was employed as the basic setup for each screen.
+MDcard is a component of the KivyMD library and represents a rectangular card with rounded corners, within which other widgets can be placed. the MDcard is drawn as a percentage of the MDcard that is tightened on the screen, and also this MDcard is drawn perpendicular to the screen The MDcard is drawn perpendicular to the screen. It also depicts the spacing of this MDcard relative to the screen and what percentage of the center of the screen this MDcard will be located. This information is entered and drawn as a visual layout. This kivy code block was adopted as the basic configuration for each screen. All screens have the same setup and background screen.
 
+```.py
+MDLabel:
+            text: "WELCOME YOUR MUSIC"
+            font_style: "H5"
+            size_hint: 1, .1
+            font_size:90
+            halign: "center"
+            pos_hint: {"center_x": .5, "center_y": .5}
+```
 
 
 
