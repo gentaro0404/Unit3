@@ -49,9 +49,14 @@ In conclusion, the proposed solution will address Daiichiro's need for a music m
 4.  The login information, such as the username, email and password, will be secured and the password will be encrypted through a hash.
 5.  The registration page will allow additional users to gain access to use the application.
 6.  The application is a GUI and displays a login page, registration page, home page, search page, additional logs, and a list of songs.
+
+
 # Criteria B: Design
 
 ## System Diagram
+
+![](IMG_1319.jpg)
+<i>Fig. 2</i> This is the wireframe for the application. 
 
 *Later
 
