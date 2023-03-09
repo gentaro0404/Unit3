@@ -201,8 +201,6 @@ WHERE name = "Gentaro"
 This is a normal SQL statement that can be executed in python through running a query with the sqlite3 library. This is a language with a low level of abstraction.
 
 
-## Criteria D: Functionality
-
 ### DEvelopment of User interface Using KivyMD
 
 ### Screen Manager
@@ -596,8 +594,9 @@ The database operation is performed using the database_worker class. Then, after
         self.data_table.update_row_data(None, result)
   ```
  This code defines a function called "search_songs" that extracts a search query string from a text input field using its corresponding id. The search query string is then used to construct an SQL query for selecting all songs from a database table that contain the search query string in the song title, artist name, or genre fields. The resulting data is fetched from the database using the "db.search" method and saved in the "result" variable. The database connection is then closed using the "db.close" method. Finally, the data table is updated using the "self.data_table.update_row_data(None, result)" method to display the filtered search results. This functionality enables the user to search for and view specific songs based on their song title, artist name, or genre, making it easier to navigate and manage a large database of songs.
- 
- 
+## Criteria D: Functionality
+## Citations
+
 ## Demonstration Video
 
 *To be done
