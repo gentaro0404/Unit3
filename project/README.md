@@ -80,13 +80,6 @@ In conclusion, the proposed solution will address Daiichiro's need for a music m
 |    | 
 ## Flow Diagrams
 
-### MVP Program
-
-*Fig.2* **Flow diagram for the MVP program.**
-
-### Main Program
-
-*Fig.3 **Flow diagram for the main program.**
 
 ## Test Plan
 
@@ -175,11 +168,6 @@ WHERE name = "Gentaro"
 ```
 This is a normal SQL statement that can be executed in python through running a query with the sqlite3 library. This is a language with a low level of abstraction.
 
-
-#### MVP - Minimum Viable Product
-
-In order to validate our concept of creation, we created a MVP as a prototype to make sure our concept is reliable and
-achievable. 
 
 ## Criteria D: Functionality
 
