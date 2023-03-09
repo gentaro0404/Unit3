@@ -83,10 +83,20 @@ In conclusion, the proposed solution will address Daiichiro's need for a music m
 
 ## Test Plan
 
-| Type    | Input | Process | Anticipated Outcome |
-| ------- | ----- | ------- | ------------------- |
-| *Insert |       |         |                     |
-|         |       |         |                     |
+| Description                          | Test Type              | Input | Process | Anticipated Outcome |
+| ----------                           | ---------  |-------| ------- | ------------------- |
+| Test for Regisraration               |Unit test   |       |         |                     |
+| Test for Login System                |Unit test   |         |                              |
+| Test for Logout System               |Unit test   |
+| Test for Adding System               |Unit test   |
+| Test for songs database              |Integration test|
+| Test for Table system                |Unit test|
+| Test for Table ule system            |Unit test|
+| Test for delete funcrion table screen|Unit test|
+| Test for add function table screen.  |Unit test|
+| Test for Search Screeen              |Unit test|
+| Test for Code Review                 |Code Review|
+
 
 # Criteria C: Development
 
