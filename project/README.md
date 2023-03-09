@@ -83,18 +83,18 @@ In conclusion, the proposed solution will address Daiichiro's need for a music m
 
 ## Test Plan
 
-| Description                          | Test Type              | Input | Process | Anticipated Outcome |
-| ----------                           | ---------  |-------| ------- | ------------------- |
-| Test for Regisraration               |Unit test   |       |         |                     |
-| Test for Login System                |Unit test   |         |                              |
-| Test for Logout System               |Unit test   |
-| Test for Adding System               |Unit test   |
-| Test for songs database              |Integration test|
-| Test for Table system                |Unit test|
-| Test for Table ule system            |Unit test|
-| Test for delete funcrion table screen|Unit test|
-| Test for add function table screen.  |Unit test|
-| Test for Search Screeen              |Unit test|
+| Description                          | Test Type              | Input | Anticipated Outcome |
+| ----------                           | ---------  |------- | ------------------- |
+| Test for Regisraration               |Unit test   |1. Run login.py file 2. Click the Register button on the application screen 3. Input the appropiate information in each textfield following the hint text 4. Click register |After clicking the Register button, if the user already exists, a pop-up message will appear informing you that the user name already exists. If the password entered does not match the confirmation password, a red message will appear informing you that the passwords do not match. If all instructions have been followed correctly, you will be returned to the login screen.|
+| Test for Login System                |Unit test   |1. Run login.py file 2. Follow instructions and enter the appropiate information in each textfield following the hint text 3. Click Login 4|After clicking Login, if the account does not exist, it will inform you that the account could not be found. If account information exists, the home page should appear.|
+| Test for Logout System               |Unit test   |1. Login 2. Press the logout button on the homepage| When the logout button is pressed, it should direct the user back to the log in screen|
+| Test for Adding System               |Unit test   |1. log in 2. click the add songs button 3. follow the hint text and enter the appropriate information in the text field 4. press the add songs button | Once the user has correctly entered the information, a pop-up message will appear informing the user that the flight has been added 5. If the information entered in the text field is incorrect, red hint text will appear to inform the user that the information entered is incorrect.
+| Test for songs database              |Integration test|1. Login 2. Click Add  button 3. Enter the appropiate songs information in the textfields accordingly to the hint text. 4. Press add flight button 5. Open unit3project.db and go to songs table|When Songs is added, it should be stored in project3_db and stored in the table. Each time a user adds a flight, its project3_db should be updated and appear in the songs table.|
+| Test for Table system                |Unit test|1. Login 2. Click tabel button|When the table button is clicked, it should direct the user to another page that displays a table of all past and recent songs information entered from the user.|
+| Test for Table url system            |Unit test|1.login 2.Click table's url | Clicking on the URL displayed in the table will open a new window in your browser.
+| Test for delete funcrion table screen|Unit test|1. Login 2. Click table button 3. Select a row 4. Click delete selected flight(s) button| If the user clicks on the checkbox next to a flight, a checkmark should appear in the box. The user then clicks on the Delete Flight button and the selected flight will be removed from the table. And if the deletion is successful, a popup will appear|
+| Test for add function table screen.  |Unit test|1.1. Login 2. Click Addbutton 3. Enter the appropiate flight information in the textfields accordingly to the hint text. 4. Press addbutton | If the user enters the information correctly, a pop-up message will appear telling the user that the flight has been added. If the information in the text field is incorrect, red error hint text will appear indicating that the information entered is incorrect.|
+| Test for Search Screeen              |Unit test|1. Login 2. Click Search button 3. Enter the appropiate information in the textfields accordingly to the hint text 4. Press the search button
 | Test for Code Review                 |Code Review|
 
 
@@ -108,7 +108,7 @@ In conclusion, the proposed solution will address Daiichiro's need for a music m
 | Python                     | SQL requests            | Passlib    |
 | SQLite                     | Databases               | sqlalchemy |
 | KivyMD                     | Encryption              |            |
-| ChatGPT                           | For Loops               |            |
+| ChatGPT                    | For Loops               |            |
 |                            | If-then-else statements |            |
 
 ## List of techniques used
