@@ -328,8 +328,58 @@ The class also has a run_save method that takes one argument, a query, which is 
 
 Finally, the class has a close method that closes the connection to the database.
 
+## Login System
 
-### Login System
+### Registration System
+
+#### Password Match Confirmation
+```.py
+    def try_register(self):
+        uname = self.ids.uname.text
+        email = self.ids.emails.text
+        passwd = self.ids.passwd.text
+        passwd2 = self.ids.passwd2.text
+```
+This code defines a method called try_register that is used to register a new user in a system. It retrieves the user's input for their desired username, email, password, and password confirmation from the corresponding text input widgets in the GUI using self.ids.
+
+The input is stored in the variables uname, email, passwd, and passwd2, respectively. uname is short for username, email refers to the email address the user enters, passwd is short for password, and passwd2 is used to confirm that the user has entered the correct password.
+
+After retrieving the input values, the method proceeds to validate the input by checking if the password and password confirmation fields match. The registration process cannot proceed if the passwords do not match.
+
+This method is commonly used in user registration systems to capture user input and validate that the information entered is accurate before proceeding with account creation.
+
+#### Insert user information into the database
+```.py
+        if passwd != passwd2:
+            self.ids.passwd.error = True
+            self.ids.passwd2.error = True
+        else:
+            hash = encrypt_password(passwd)
+            db = database_worker("project3_db.db")
+            query = f"INSERT into users (email, password, username) values('{email}','{hash}','{uname}')"
+            db.run_save(query)
+            db.close()
+            print("Registration complete")
+            self.parent.current = "LoginScreen"
+```
+When a user is trying to create a new account, this code validates the information entered and processes it to insert the user information into the database.
+
+First, it checks if the passwords entered match. If it does not match, an error is displayed in the password entry field.
+
+If it matches, the password is hashed and the new user information is inserted into the database. To do so, it generates an SQL query containing the user name, email address, and hashed password, and queries the database using the database_worker class. Then close the database connection.
+
+Finally, it displays a message indicating that the new user was successfully created and returns to the login screen.
+
+
+#### passward reset
+```.py
+    def cancel(self):
+        self.ids.passwd.text = ""
+        self.ids.passwd2.text = ""
+        self.parent.current = "LoginScreen"
+```
+This code provides the ability to reset the password on the user registration screen and return to the login screen. cancel method empties the text in the password entry field and changes the application's current screen to LoginScreen. This allows the user to re-enter the password and cancel the registration.
+
 
 
 #### Pulling user information from the database
@@ -359,7 +409,8 @@ The code attempts to log in a user by checking if the username entered exists in
 The code checks whether the length of the result returned from the database is equal to 1, indicating that a user with the entered username exists in the database. If so, the hashed password associated with that user name is retrieved from the database and the "check_password" function is used to check whether the entered password matches the stored hashed password. If the password matches, the user is logged in and the screen switches to the home screen.
 
 
-### Registration System
+## Registration System
+
 
 ### Adding System
 
@@ -394,7 +445,7 @@ This code defines a function called "Addsongs" that extracts input data for a ne
 
 This code inserts flight information provided by variables flight_number, destination, date, flight_schedule, terminal, gate_number, and status into a database table called "allflights" using an SQL query constructed using the query variable, executed using the run_save method of the database connection created with the database_worker function, and saved to the database file "unit3project.db". The close method is used to close the database connection after the query has been executed, and a message is printed to indicate that the flight has been added to the database.
 
-### Table of songs 
+## Table of songs 
 
 #### Data Table
 
@@ -420,10 +471,9 @@ self.data_table = MDDataTable(
 ```
 This code is designed to display a table on the screen that contains data, with the aim of allowing the user to view and interact with the data in a clear and organized way. In order to provide the client with the ability to listen to a song from their own list of favorite songs, this code uses the "self.data_table.bind(on_row_press=self.on_row_press)" method to enable the user to click on a specific song URL displayed on the table, which will trigger the "on_row_press" function to execute and redirect the user to the corresponding URL. This functionality is essential for providing a smooth and seamless user experience and ensures that the client can easily navigate to the song they want to listen to from their list of favorite songs.
 
-#### 
 
 
-#### 
+#### Press an item in a table
 ```.py
 @staticmethod
     def on_row_press(table, row):
@@ -445,6 +495,76 @@ This code is designed to display a table on the screen that contains data, with 
     def on_check_press(table, current_row):
         print(f"Row {current_row} was checked")
 ```
+
+This code defines methods for manipulating tables using Kivy, a Python GUI framework. Specifically, it defines the on_row_press method, which is called when a table row is selected, and the on_check_press method, which is called when a table row is checked.
+
+The on_row_press method performs a specific operation on the table and row passed as arguments. This method retrieves the data for the selected row, checks to see if it is a URL, and if so, parses the URL to open it in a web browser and calls webbrowser.open. This method is declared as a static method, so it can be called directly without creating an instance of the class.
+
+The on_check_press method performs specific processing on the table and current_row passed as arguments. This method retrieves information about the checked row and outputs a message to confirm that it has been selected. This method is also declared as a static method, so it can be called directly without creating an instance of the class.
+
+### Deleting Table
+
+```.py
+    def delete(self):
+        rows_checked = self.data_table.get_row_checks()
+        print("Trying to delete")
+        print(rows_checked)
+        db = database_worker("project3_db.db")
+        for r in rows_checked:
+            id = r[0]
+            query = f"delete from songs where id = {id}"
+            db.run_save(query)
+        db.close()
+        self.update()
+```
+This code implements the function of deleting data from the database: the delete() method retrieves the data for the rows checked by the user and deletes those rows from the database. First, it uses the get_row_checks() method of the data_table object to obtain a list of checked rows. Then, using the IDs of the retrieved rows, we create an SQL query to delete the corresponding rows from the songs table and send it to the database using the database_worker class. Finally, the update() method is used to update the data and display the latest data.
+
+Specifically, it stores the list of rows checked by the user in rows_checked. It then connects to the database and executes a delete query on each row in the rows_checked list using a for loop. Using the ID of the deleted row, the SQL query deletes the corresponding row in the songs table. To reflect the changes to the database, we close the database with the db.close() method and finally update the GUI data to the latest state using the self.update() method.
+
+#### Delete from Database
+
+```.py
+ def delete_songs(self):
+        checked = self.data_table.get_row_checks()
+        Logger.info("Deleting vocabulary from database...")
+        try:
+            for row in checked:
+                vocab_id = int(row[0])
+                query = f"DELETE FROM songs WHERE id = {vocab_id}"
+                db = database_worker("project3_db.db")
+                db.run_save(query)
+                db.close()
+            self.update()
+            deletedialog = MDDialog(
+                title="Success",
+                text="Song deleted successfully",
+                size_hint=(0.8, 0.3),
+                buttons=[
+                    MDFlatButton(
+                        text="OK",
+                        on_press=lambda x: deletedialog.dismiss()
+                    )
+                ]
+            )
+            deletedialog.open()
+        except Exception as e:
+            Logger.error(f"Error deleting song: {e}")  
+```
+This program provides a function to remove from the database the songs selected by the user in the data table.
+
+First, it uses the get_row_checks() function to identify the rows selected by the user and obtains a list of the rows selected in the data table. Then, a for loop is used to obtain the ID of the row for each selected row, and an SQL query is generated to remove the selected rows from the database.
+
+The database operation is performed using the database_worker class. Then, after the deletion, the table is updated so that the deleted rows disappear from the data table. If the deletion is successful, a dialog box is displayed using the MDDialog widget to notify the user that the deletion was successful. If an error occurs, an error message is output to the log.
+
+#### passward reset
+```.py
+    def cancel(self):
+        self.ids.passwd.text = ""
+        self.ids.passwd2.text = ""
+        self.parent.current = "LoginScreen"
+```
+This code provides the ability to reset the password on the user registration screen and return to the login screen. cancel method empties the text in the password entry field and changes the application's current screen to LoginScreen. This allows the user to re-enter the password and cancel the registration.
+        
 ## Demonstration Video
 
 *To be done
