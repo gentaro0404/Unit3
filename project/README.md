@@ -328,9 +328,9 @@ The class also has a run_save method that takes one argument, a query, which is 
 
 Finally, the class has a close method that closes the connection to the database.
 
-## Login System
 
 ### Registration System
+
 
 #### Password Match Confirmation
 ```.py
@@ -370,6 +370,7 @@ If it matches, the password is hashed and the new user information is inserted i
 
 Finally, it displays a message indicating that the new user was successfully created and returns to the login screen.
 
+### Login System
 
 #### passward reset
 ```.py
@@ -381,6 +382,7 @@ Finally, it displays a message indicating that the new user was successfully cre
 This code provides the ability to reset the password on the user registration screen and return to the login screen. cancel method empties the text in the password entry field and changes the application's current screen to LoginScreen. This allows the user to re-enter the password and cancel the registration.
 
 
+### Registration System
 
 #### Pulling user information from the database
 ```.py
@@ -409,7 +411,7 @@ The code attempts to log in a user by checking if the username entered exists in
 The code checks whether the length of the result returned from the database is equal to 1, indicating that a user with the entered username exists in the database. If so, the hashed password associated with that user name is retrieved from the database and the "check_password" function is used to check whether the entered password matches the stored hashed password. If the password matches, the user is logged in and the screen switches to the home screen.
 
 
-## Registration System
+
 
 
 ### Adding System
@@ -445,7 +447,7 @@ This code defines a function called "Addsongs" that extracts input data for a ne
 
 This code inserts flight information provided by variables flight_number, destination, date, flight_schedule, terminal, gate_number, and status into a database table called "allflights" using an SQL query constructed using the query variable, executed using the run_save method of the database connection created with the database_worker function, and saved to the database file "unit3project.db". The close method is used to close the database connection after the query has been executed, and a message is printed to indicate that the flight has been added to the database.
 
-## Table of songs 
+### Table of songs 
 
 #### Data Table
 
