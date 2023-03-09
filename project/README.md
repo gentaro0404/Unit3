@@ -258,6 +258,60 @@ An important aspect of designing MDTextFields is the size hint property, which s
 
 ### Database configuration
 
+```.py
+class database_worker:
+    def __init__(self, name):
+        self.connection = sqlite3.connect(name)
+        self.cursor = self.connection.cursor()
+
+    def search(self, query):
+        result = self.cursor.execute(query).fetchall()
+        return result
+
+    def run_save(self, query):
+        self.cursor.execute(query)
+        self.connection.commit()
+
+    def close(self):
+        self.connection.close()
+```
+This code defines a Python class called database_worker. This class has a __init__ method that takes one argument, name, which specifies the name of the SQLite database. This method initializes a connection to the specified database in the connection attribute and a cursor object that can be used to execute SQL statements on the database in the cursor attribute.
+
+The class also has a search method that takes one argument, a query, which is an SQL query to be executed on the database. This method executes the query using the cursor object and fetches all results using the fetchall method. The method then returns the results as a list of tuples.
+
+The class also has a run_save method that takes one argument, a query, which is an SQL query to be executed on the database. This method executes the query using a cursor object and commits the changes to the database.
+
+Finally, the class has a close method that closes the connection to the database.
+
+
+### Login System
+
+
+#### Pulling user information from the database
+```.py
+    def try_login(self):
+        print("User trying to login")
+        uname = self.ids.uname.text
+        passwd = self.ids.passwd.text
+        query = f"SELECT * from users WHERE username = '{uname}'"
+        db = database_worker("project3_db.db")
+        result = db.search(query=query)
+        db.close()
+        print(result)
+ ```       
+
+The code attempts to log in a user by checking if the username entered exists in the database and if the password entered matches the password stored in the database under that username.
+
+#### User Credential Verification
+```.py
+        if len(result)==1:
+            pass
+            hashed = result[0][2]
+            if check_password(user_password=passwd, Hashed_password=hashed):
+                print("Login successful")
+                self.parent.current = "HomeScreen"
+```
+
 
 
 ## Demonstration Video
