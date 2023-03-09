@@ -563,7 +563,7 @@ First, it uses the get_row_checks() function to identify the rows selected by th
 
 The database operation is performed using the database_worker class. Then, after the deletion, the table is updated so that the deleted rows disappear from the data table. If the deletion is successful, a dialog box is displayed using the MDDialog widget to notify the user that the deletion was successful. If an error occurs, an error message is output to the log.
 
-### SearchScreen
+### Search System
 ```.py
     def search_songs(self):
         search = self.ids.search.text
