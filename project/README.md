@@ -166,6 +166,7 @@ Defining each screen as a separate widget is possible with ScreenManager. And be
 
 ### General Application Screen for Kivy
 
+### SignupScreen
 ```.py
 <SignupScreen>:
      size: 500,500
@@ -182,6 +183,8 @@ Defining each screen as a separate widget is possible with ScreenManager. And be
  
 MDcard is a component of the KivyMD library and represents a rectangular card with rounded corners, within which other widgets can be placed. the MDcard is drawn as a percentage of the MDcard that is tightened on the screen, and also this MDcard is drawn perpendicular to the screen The MDcard is drawn perpendicular to the screen. It also depicts the spacing of this MDcard relative to the screen and what percentage of the center of the screen this MDcard will be located. This information is entered and drawn as a visual layout. This kivy code block was adopted as the basic configuration for each screen. All screens have the same setup and background screen.
 
+
+### MDLabel
 ```.py
 MDLabel:
             text: "WELCOME YOUR MUSIC"
@@ -192,6 +195,68 @@ MDLabel:
             pos_hint: {"center_x": .5, "center_y": .5}
 ```
 
+The MDLabel is a customizable on-screen text label that is widely used in modern applications to convey important information to users. It is an essential UI element that serves as an indicator to guide the user and provide context to the content being displayed on the screen.
+
+In this particular case, the MDLabel is being utilized as the title of the home page screen, making it the first thing the user sees when they enter the home screen. The label's role is to provide the user with a clear understanding of where they are within the application, which is crucial for a seamless user experience.
+
+This MDLabel can be customized in terms of its text color, font, size, and style to align with the overall theme of the application. The label's flexibility makes it an essential component of any application, allowing developers to design visually appealing screens with a clear and concise message. Ultimately, the MDLabel serves as an essential tool for designers and developers alike to enhance the user's experience and create a successful application.
+
+### MDFillRoundFlatIconButton
+```.py
+MDFillRoundFlatIconButton:
+                icon: "music-circle-outline"
+                text: "Add your songs"
+                font_size: 30
+                on_release: app.root.current = 'AddScreen'
+                md_bg_color: "f6bd60"
+                pos_hint: {"center_x": .5, "center_y": .5}
+```
+
+
+The KV code above shows the implementation of the MDFillRoundFlatIconButton, a multifunctional button often used in modern UI design to create visually appealing and user-friendly interfaces. The button is designed with a circular, flat icon and is often used for interactive elements that need to be quickly accessed, such as home screen buttons and navigation menus.
+
+The MDFillRoundFlatIconButton provides a clean, professional aesthetic that is in line with client needs. The shape and style of this button provides a modern, sleek design that enhances the overall user experience. Additionally, the circular shape of the button adds a unique touch to the interface and helps distinguish it from other standard rectangular buttons.
+
+This button is a popular choice among designers and developers because it can be easily customized to fit the design requirements of any application. MDFillRoundFlatIconButton can be adjusted to match the application's color scheme, text size, font style MDFillRoundFlatIconButton can be adjusted to match your application's color scheme, text size, and font style, resulting in a consistent and cohesive interface.
+
+
+
+### MDRaisedButton
+```.py
+MDRaisedButton:
+            id : addsongs
+            text:"Add Songs"
+            size_hint: 3,1
+            md_bg_color: "#a8dadc"
+            on_press:
+                root.manager.current = "AddScreen"
+                root.manager.transition.direction = "left"
+```
+
+MDRaisedButton is a rectangular button. It features a 3D-like visual effect and has a raised or slightly elevated appearance. It is often used for more important or attention-grabbing actions within an application. unlike the MDFillRoundFlatIconButton, the MDRaisedButton is not circular in shape and can be customized to include text or an icon.
+
+Both buttons can be customized to meet the design requirements of the application, but which one to use depends on the specific use case and the desired look and feel of the interface. In general, MDFillRoundFlatIconButton is better suited for home screen buttons and navigation menus, while MDRaisedButton is better suited for actions that require a more prominent or attention-grabbing appearance.
+
+
+### MDTextField
+```.py
+ MDTextField:
+                id: search
+                hint_text: "Search"
+                size_hint: 1, .17
+                required: True
+```
+
+MDTextField is a fundamental component of the modern user interface that allows users to enter information through the keyboard. This type of text field is an essential element of applications that require data entry by the user, such as account registration, data entry forms, and search boxes.
+
+When programming MDTextFields, it is important to consider the possibility of user error during data entry. To address this issue, designers and developers can use helper text and error messages to guide users through the data entry process. As shown in the figure above, helper text is displayed to prompt the user to enter information if he or she forgets to do so. Additionally, if an error occurs during data entry, the error message is displayed in red to alert the user.
+
+An important aspect of designing MDTextFields is the size hint property, which specifies the size of the text field. The size hint can be set to a specific value, such as "1,.17" to ensure that the text field is large enough for the user to enter information without problems. If the size hint is set to a value that is too small, the user may have difficulty entering text properly, leading to errors and frustration.
+
+
+## Development of Application Using Python
+
+### Database configuration
 
 
 
