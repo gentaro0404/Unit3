@@ -1,6 +1,6 @@
 # Unit 3 Project: Favorite Songs List Maker
 
- Criteria A: Planning
+ ## Criteria A: Planning
 
 ## Problem definition(Client identification)
 
