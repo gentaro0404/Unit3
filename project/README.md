@@ -1,6 +1,6 @@
 # Unit 3 Project: Japanese Vocab Revision App
 
-## Criteria A: Planning
+ Criteria A: Planning
 
 ## Problem definition(Client identification)
 
@@ -55,21 +55,43 @@ In conclusion, the proposed solution will address Daiichiro's need for a music m
 
 ## System Diagram
 
-![](IMG_1319.jpg)
-<i>Fig. 2</i> This is the wireframe for the application. 
+![](49.jpg)
+<i>Fig. １</i> This is the wireframe for the application. 
 
-*Later
+It serves as a visual representation of the system and its components, and their relationships to each other. As shown above, the application will run on Python and KivyMD. The application will have various inputs from the user, which will all be stored within a database using SQLite. All of this will be executed within the Pycharm application, which will then display the output on a screen
 
-**Fig.1** 
-
-## Data Storage
 
 
 
 ## Wireframe
 
+![](IMG_1318.JPG)
+<i>Fig. 2</i> This is the wireframe for the application. 
+
+As shown in Figure 2, the wireframe details the appearance of the application. The wireframe also details the plan for how the different screens will be displayed by the different buttons. Arrows extending from the buttons to the screen serve to indicate which screen will open when the user presses and then releases the button. With two exceptions, the "Search Flight" screen and the "Table" screen will open whichever browser opens and jumps to the URL when the user clicks on the "Search" (search flight screen) or "Table View" URL. The purpose of this wireframe diagram is to visually represent the user interface design outlining the structure and layout of the application.
+
+## ER Diagram
+![](IMG_1320.JPG)
+<i>Fig. 3</i> This is the wireframe for the application. 
+
+## UML Diagram
+![](UML.png)
+<i>Fig. 5</i> This is the wireframe for the application. 
+This is a UML diagram of the application, showing the classes and methods used in its development. The diagram contains two main parent classes: MDApp and MDScreen. All subclasses inherit methods and attributes from these parent classes, as indicated by the arrows in the diagram.
+
+The database_worker class in the figure provides methods for establishing a connection to the SQLite3 database, retrieving information in the database, saving information to the database, and closing the connection to the database.
+
+## Flow diagram
+![](flow1.png)
+<i>Fig. 5</i> This is the wireframe for the application. 
 
 
+![](flow2.png)
+<i>Fig. 6</i> This is the wireframe for the application. 
+
+
+![](flow3.png)
+<i>Fig. 7</i> This is the wireframe for the application. 
 ## Record of Tasks
 
 | No. | Task                                          | Planned Outcome                                                                                                                                | Time Estimate | Target Completion date | Criterion |
