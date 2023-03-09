@@ -411,7 +411,14 @@ The code attempts to log in a user by checking if the username entered exists in
 The code checks whether the length of the result returned from the database is equal to 1, indicating that a user with the entered username exists in the database. If so, the hashed password associated with that user name is retrieved from the database and the "check_password" function is used to check whether the entered password matches the stored hashed password. If the password matches, the user is logged in and the screen switches to the home screen.
 
 
-
+#### passward reset
+```.py
+    def cancel(self):
+        self.ids.passwd.text = ""
+        self.ids.passwd2.text = ""
+        self.parent.current = "LoginScreen"
+```
+This code provides the ability to reset the password on the user registration screen and return to the login screen. cancel method empties the text in the password entry field and changes the application's current screen to LoginScreen. This allows the user to re-enter the password and cancel the registration.
 
 
 ### Adding System
@@ -558,15 +565,19 @@ First, it uses the get_row_checks() function to identify the rows selected by th
 
 The database operation is performed using the database_worker class. Then, after the deletion, the table is updated so that the deleted rows disappear from the data table. If the deletion is successful, a dialog box is displayed using the MDDialog widget to notify the user that the deletion was successful. If an error occurs, an error message is output to the log.
 
-#### passward reset
+### SearchScreen
 ```.py
-    def cancel(self):
-        self.ids.passwd.text = ""
-        self.ids.passwd2.text = ""
-        self.parent.current = "LoginScreen"
-```
-This code provides the ability to reset the password on the user registration screen and return to the login screen. cancel method empties the text in the password entry field and changes the application's current screen to LoginScreen. This allows the user to re-enter the password and cancel the registration.
-        
+    def search_songs(self):
+        search = self.ids.search.text
+        db = database_worker("project3_db.db")
+        query = "SELECT * from songs where song_title like '%"+search+"%' or artist_name like '%"+search+"%' or genre like '%"+search+"%'"
+        result = db.search(query)
+        db.close()
+        self.data_table.update_row_data(None, result)
+  ```
+ This code defines a function called "search_songs" that extracts a search query string from a text input field using its corresponding id. The search query string is then used to construct an SQL query for selecting all songs from a database table that contain the search query string in the song title, artist name, or genre fields. The resulting data is fetched from the database using the "db.search" method and saved in the "result" variable. The database connection is then closed using the "db.close" method. Finally, the data table is updated using the "self.data_table.update_row_data(None, result)" method to display the filtered search results. This functionality enables the user to search for and view specific songs based on their song title, artist name, or genre, making it easier to navigate and manage a large database of songs.
+ 
+ 
 ## Demonstration Video
 
 *To be done
