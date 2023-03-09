@@ -596,6 +596,12 @@ The database operation is performed using the database_worker class. Then, after
  This code defines a function called "search_songs" that extracts a search query string from a text input field using its corresponding id. The search query string is then used to construct an SQL query for selecting all songs from a database table that contain the search query string in the song title, artist name, or genre fields. The resulting data is fetched from the database using the "db.search" method and saved in the "result" variable. The database connection is then closed using the "db.close" method. Finally, the data table is updated using the "self.data_table.update_row_data(None, result)" method to display the filtered search results. This functionality enables the user to search for and view specific songs based on their song title, artist name, or genre, making it easier to navigate and manage a large database of songs.
 ## Criteria D: Functionality
 ## Citations
+1.Luna, J. C. (2022, January 21). Top programming languages for Data Scientists in 2022. DataCamp. Retrieved March 10, 2023, from https://www.datacamp.com/blog/top-programming-languages-for-data-scientists-in-2022 
+2.Advantages of OOP: Explore the top 9 advantages of OOP. EDUCBA. (2022, June 23). Retrieved March 10, 2023, from https://www.educba.com/advantages-of-oop/ 
+3.KIVY: Cross-platform Python Framework for nui. Cross-platform Python Framework for GUI apps Development. (n.d.). Retrieved March 10, 2023, from https://kivy.org/ 
+4.The Python SQL Toolkit and Object Relational Mapper. SQLAlchemy. (n.d.). Retrieved March 10, 2023, from https://www.sqlalchemy.org/ 
+5.Introduction to SQL. SQL Introduction. (n.d.). Retrieved March 10, 2023, from https://www.w3schools.com/sql/sql_intro.asp 
+6.Top 2% extraordinary talent on demand™. Talentopia. (n.d.). Retrieved March 10, 2023, from https://www.talentopia.com/ 
 
 ## Demonstration Video
 
