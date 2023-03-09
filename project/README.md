@@ -594,7 +594,14 @@ The database operation is performed using the database_worker class. Then, after
         self.data_table.update_row_data(None, result)
   ```
  This code defines a function called "search_songs" that extracts a search query string from a text input field using its corresponding id. The search query string is then used to construct an SQL query for selecting all songs from a database table that contain the search query string in the song title, artist name, or genre fields. The resulting data is fetched from the database using the "db.search" method and saved in the "result" variable. The database connection is then closed using the "db.close" method. Finally, the data table is updated using the "self.data_table.update_row_data(None, result)" method to display the filtered search results. This functionality enables the user to search for and view specific songs based on their song title, artist name, or genre, making it easier to navigate and manage a large database of songs.
-## Criteria D: Functionality
+ 
+ 
+# Criteria D: Functionality
+
+## Appendi
+![](pic_jpg.png)
+This is proof of client approval of proposed Success Criteria
+
 ## Citations
 1.Luna, J. C. (2022, January 21). Top programming languages for Data Scientists in 2022. DataCamp. Retrieved March 10, 2023, from https://www.datacamp.com/blog/top-programming-languages-for-data-scientists-in-2022 
 2.Advantages of OOP: Explore the top 9 advantages of OOP. EDUCBA. (2022, June 23). Retrieved March 10, 2023, from https://www.educba.com/advantages-of-oop/ 
