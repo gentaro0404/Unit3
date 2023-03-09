@@ -67,17 +67,27 @@ In conclusion, the proposed solution will address Daiichiro's need for a music m
 
 ## Record of Tasks
 
-| Task No | Planned Action                                   | Planned Outcome                                          | Time estimate | Target completion date | Criterion |
-| ------- | ------------------------------------------------ | -------------------------------------------------------- | ------------- | ---------------------- | --------- |
-| 1       | First Meeting with client               | Start collecting the context of the problem              | 6min          | Feb 7                  | A         |
-| 2       |  Defining problem and proposed solution | Start on refining client's requirements and tools needed | 2hr           | Feb 13                 | A         |
-| 3      | Initializing codebase                    | To have the base environment of program ready for coding | 1hr           | Feb 14                | C         |
-|     | Create login page                        | Program the kivymd and python files for the GUI and functionaliy of the login page.    | 1hr  | feb 14. | B |
-|    | Create regisration page.                    | Program the kivymd and python files for the GUI and functionality of the registration page	| 1hr | feb 14 |  B |
-|    |  Create wireframe diagram                  | Design the wireframe diagram of the application     | 1hr30mis.     |  Feb 15 |  C  |
-|    | Crate system diagram                       | Design the system diagram of the application |  1hr. | Feb 17. | A |
-|    | Create ER table and diagram                | Design the ER table and diagram for the application.  |  1hr30mis  | Feb 19  |  A |  
-|    | 
+| No. | Task                                          | Planned Outcome                                                                                                                                | Time Estimate | Target Completion date | Criterion |
+|-----|-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|---------------|------------------------|-----------|
+| 1   | First meeting with client                     | Identify problem, set up future meeting(s)                                                                                                     | 10 min        | Feb 11                | A         |
+| 2   | Create proposed solution and success criteria | Create a detailed proposed solution and success criteria to client's problem, send to client for confirmation                                  | 20 min        | Feb 12                | A         |
+| 3   | Research rationale                            | Research and create a logical rationale behind the tools used for the proposed solution                                                        | 40 min        | Feb 12                | A         |
+| 4   | Create login page                             | Program the kivymd and python files for the GUI and functionality of the login page                                                            | 3 hr          | Feb 15               | C         |
+| 5   | Create registration page                      | Program the kivymd and python files for the GUI and functionality of the registration page                                                     | 2 hr          | Feb 15               | C         |
+| 6   | Create wireframe diagram                      | Design the wireframe diagram of the application                                                                                                | 30 min        |  Feb 27               | B         |
+| 7   | Create system diagram                         | Design the system diagram of the application                                                                                                   | 30 min        | Feb 27               | B         |
+| 8   | Create ER table and diagram                   | Design the ER table and diagram for the application                                                                                            | 30 min        | Feb 27               | B         |
+| 9   | Create homescreen page                           | Program the kivymd and python files for the GUI and functionality of the main menu                                                             | 3 hr          | March 3                | C         |
+| 10  | Create database                               | users (users, id, email,name) using SQLAlchemy ORM                                                                   | 2 hr          | April 3                | C         |
+| 11  | Create password hashing function              | Create a function to encrypt user passwords for security                                                                                       | 30 min        |  March 3                | C         |
+| 12  | Create first table screen                     | Program the kivymd and python files for the GUI and functionality of the first table screen, which displays the log of borrowers               | 3 hr          | MArch 5               | C         |
+| 13  | Create first table screen input               | Program the kivymd and python files for the GUI and functionality to input data into the first table                                           | 3 hr          |  March 7               | C         |
+| 14  | Create second table screen                    | Program the kivymd and python files for the GUI and functionality of the second table screen, which displays the songs appliance information | 2 hr          | March 10               | C         |
+| 15  | Create second table screen input              | Program the kivymd and python files for the GUI and functionality to input data into the second table                                          | 2 hr          | March 10              | C         |
+| 16  | Create flow diagrams                          | Design 3 flow diagrams to showcase modules of functionality from the python file                                                               | 30 min        | March 10               | B         |
+| 17  | Clean up code                                 | Final bug fixes and commenting, good coding practices                                                                                          | 1 hr          |  March 10               | C         |
+| 18  | Final testing                                 | Final functionality testing by following the test plan                                                                                         | 30 min        |  March 10               | D         |
+| 19  | Create demonstration video                    | Create video showcasing complete functionality of the application                                                                              | 1 hr          |  March 10              | D         |
 ## Flow Diagrams
 
 
@@ -111,22 +121,7 @@ In conclusion, the proposed solution will address Daiichiro's need for a music m
 | ChatGPT                    | For Loops               |            |
 |                            | If-then-else statements |            |
 
-## List of techniques used
 
-1. 
-
-## Computational Thinking
-
-#### Decomposition
-
-In computational thinking, decomposition refers to breaking a complex problem or system into parts that are easier to conceive,
-understand, program, and maintain.
-
-#### Pattern recognition, generalization and abstraction
-
-
-
-#### Algorithms
 
 
 
