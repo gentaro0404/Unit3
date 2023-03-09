@@ -105,7 +105,7 @@ In conclusion, the proposed solution will address Daiichiro's need for a music m
 | Python                     | SQL requests            | Passlib    |
 | SQLite                     | Databases               | sqlalchemy |
 | KivyMD                     | Encryption              |            |
-|                            | For Loops               |            |
+| ChatGPT                           | For Loops               |            |
 |                            | If-then-else statements |            |
 
 ## List of techniques used
@@ -129,7 +129,52 @@ understand, program, and maintain.
 
 ## Development
 
-#### OOP
+### OOP
+
+#### Object Oriented Programming
+
+The Apprication was constructed using Object-Oriented Programming (OOP) principles to improve its modularity, reliability, and maintainability. OOP is a programming paradigm that emphasizes the creation of objects, which are instances of classes that encapsulate both data and behavior. By using classes, the code is organized into reusable and modular components that can be easily extended or modified.
+
+In this app, each component of the application, such as the GUI, database, and user inputs, is encapsulated in its own class. This allows for easier debugging and troubleshooting since each class can be tested independently of the others. Moreover, changes and updates to the application can be made without affecting other parts of the code.
+
+Additionally, OOP allows for the use of abstraction and polymorphism, which make the code more flexible and adaptable. Abstraction refers to the ability to hide implementation details and focus on the essential features of an object, while polymorphism allows objects of different classes to be used interchangeably.
+
+Overall, the use of OOP in the Vocabulary App improves its overall design, making it more organized, modular, and flexible. It also makes it easier for future developers to maintain and extend the application with new features.
+
+
+```.py
+class database_worker:
+    def __init__(self, name):
+        self.connection = sqlite3.connect(name)
+        self.cursor = self.connection.cursor()
+
+    def search(self, query):
+        result = self.cursor.execute(query).fetchall()
+        return result
+
+    def run_save(self, query):
+        self.cursor.execute(query)
+        self.connection.commit()
+
+    def close(self):
+        self.connection.close()
+```
+In this way, each action is contained under a function for each screen class, making it very easy to understand.
+
+
+#### ORM
+
+Object-Relational Mapping (ORM) is a programming technique that allows developers to manipulate relational databases using an object-oriented programming paradigm. A relational database is a database that stores structured data organized in tables and columns. In traditional programming, developers need to write SQL code to interact with the database using SQL statements to retrieve, update, and delete records in the database. With an ORM, however, developers can interact with the database using an object-oriented approach; the ORM framework provides a layer of abstraction between the application and the database. This eliminates the need for developers to write SQL code to deal with the database.
+
+The ORM framework maps database tables to application classes and columns to class properties. This allows developers to manipulate the database by simply manipulating the classes, without the need to write SQL code to interact with the database. For example, consider the following Python code.
+
+```,py
+SELECT *
+FROM users
+WHERE name = "Gentaro"
+```
+This is a normal SQL statement that can be executed in python through running a query with the sqlite3 library. This is a language with a low level of abstraction.
+
 
 #### MVP - Minimum Viable Product
 
@@ -164,7 +209,7 @@ Each screen uses and defines a separate kivy code block that provides the layout
 
 Defining each screen as a separate widget is possible with ScreenManager. And because it is possible to switch screens on the liverpool and treat each screen as a separate one. As an example, when a user logs in, he/she can switch from "LoginScreen" to "HomeScreen" by pressing a button. This structure of the GUI results in a very organized and intuitive interface that is easy to use for both users and developers.
 
-### General Application Screen for Kivy
+## General Application Screen for Kivy
 
 ### SignupScreen
 ```.py
@@ -311,9 +356,95 @@ The code attempts to log in a user by checking if the username entered exists in
                 print("Login successful")
                 self.parent.current = "HomeScreen"
 ```
+The code checks whether the length of the result returned from the database is equal to 1, indicating that a user with the entered username exists in the database. If so, the hashed password associated with that user name is retrieved from the database and the "check_password" function is used to check whether the entered password matches the stored hashed password. If the password matches, the user is logged in and the screen switches to the home screen.
 
 
+### Registration System
 
+### Adding System
+
+
+```.py
+    def Addsongs(self):
+        song_title = self.ids.song_title.text
+        release_date = self.ids.release_date.text
+        artist_name = self.ids.artist_name.text
+        genre = self.ids.genre.text
+        song_link = self.ids.song_link.text
+```
+#### Variable Definitions
+This code defines a function called "Addsongs" that extracts input data for a new song from various text input fields using their corresponding ids. The input data includes the song title, release date, artist name, genre, and song link. These variables are used to construct an SQL query for inserting the new song into a database table.
+
+
+##### Insert Query
+```.py 
+    def Addsongs(self):
+        song_title = self.ids.song_title.text
+        release_date = self.ids.release_date.text
+        artist_name = self.ids.artist_name.text
+        genre = self.ids.genre.text
+        song_link = self.ids.song_link.text
+
+        db = database_worker("project3_db.db")
+        query = f"INSERT into songs (song_title, release_date,artist_name,genre,song_link) values('{song_title}','{release_date}','{artist_name}','{genre}','{song_link}')"
+        db.run_save(query)
+        db.close()
+        print("Song added")
+```
+
+This code inserts flight information provided by variables flight_number, destination, date, flight_schedule, terminal, gate_number, and status into a database table called "allflights" using an SQL query constructed using the query variable, executed using the run_save method of the database connection created with the database_worker function, and saved to the database file "unit3project.db". The close method is used to close the database connection after the query has been executed, and a message is printed to indicate that the flight has been added to the database.
+
+### Table of songs 
+
+#### Data Table
+
+```.py
+self.data_table = MDDataTable(
+            size_hint=(0.9, 0.7),
+            pos_hint={"center_x": 0.5, "center_y": 0.5},
+            use_pagination=True,
+            check=True,
+            column_data=[
+                ("ID", 50),
+                ("Song title", 40),
+                ("Release date", 40),
+                ("Artist name", 40),
+                ("Genre", 40),
+                ("Song link", 160)
+            ],
+            row_data=[]
+        )
+        self.add_widget(self.data_table)
+        self.data_table.bind(on_row_press=self.on_row_press)
+        self.update()
+```
+This code is designed to display a table on the screen that contains data, with the aim of allowing the user to view and interact with the data in a clear and organized way. In order to provide the client with the ability to listen to a song from their own list of favorite songs, this code uses the "self.data_table.bind(on_row_press=self.on_row_press)" method to enable the user to click on a specific song URL displayed on the table, which will trigger the "on_row_press" function to execute and redirect the user to the corresponding URL. This functionality is essential for providing a smooth and seamless user experience and ensures that the client can easily navigate to the song they want to listen to from their list of favorite songs.
+
+#### 
+
+
+#### 
+```.py
+@staticmethod
+    def on_row_press(table, row):
+        print(f"Row was pressed. Data is: {row.text}")
+        if row.text.find("http") == -1:
+            temp = f"https://{row.text}"
+        else:
+            temp = row.text
+        result = urlparse(temp)
+        print(result)
+        print(all([result.scheme, result.netloc, result.path]))
+        if all([result.scheme, result.netloc, result.path]) is True:
+            webbrowser.open(temp)
+            print("reached")
+        else:
+            pass
+
+    @staticmethod
+    def on_check_press(table, current_row):
+        print(f"Row {current_row} was checked")
+```
 ## Demonstration Video
 
 *To be done
