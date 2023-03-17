@@ -1,7 +1,7 @@
 # Quiz 044
 
 ## Prompt
-![]()
+![](quiz044_doc.jpeg)
 
 ## Code Structure
 
@@ -17,5 +17,4 @@ select item from ITEM where owner is 4 or owner is 18;
 
 ## Evidence
 
-![]()
-*Fig.1* **Image showing result of the first query**
+### https://youtu.be/haKR3VUImX8
