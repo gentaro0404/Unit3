@@ -68,5 +68,5 @@ ScreenManager:
 ## Evidence
 
 ![](quiz042_pic1.jpeg)
-![](quiz043_doc.jpeg)
+![](quiz042_pic2（小）.jpeg)
 *Fig.1* **Image showing GUI of program**
