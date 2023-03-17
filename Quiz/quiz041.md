@@ -175,4 +175,4 @@ Screen:
 ```
 
 ## Proof
-![quiz041.mov](quiz041.mov)
+### https://youtu.be/O_0y0HkHOo4
